@@ -5,19 +5,20 @@
   
 
   
-  <title>Hello World | Hexo</title>
+  <title>Pattern Recognition 01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="模式识别系列">
+<meta name="keywords" content="Note,Pattern Recognition">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/06/29/hello-world/index.html">
+<meta property="og:title" content="Pattern Recognition 01">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/Pattern-Recognition-01/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="模式识别系列">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-29T08:38:41.550Z">
+<meta property="og:updated_time" content="2017-12-21T08:32:08.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Pattern Recognition 01">
+<meta name="twitter:description" content="模式识别系列">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,12 +65,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Pattern-Recognition-01" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/29/hello-world/" class="article-date">
-  <time datetime="2018-06-29T08:38:41.550Z" itemprop="datePublished">2018-06-29</time>
+    <a href="/2017/12/20/Pattern-Recognition-01/" class="article-date">
+  <time datetime="2017-12-20T11:14:04.000Z" itemprop="datePublished">2017-12-20</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Pattern-Recognition/">Pattern Recognition</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -78,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Pattern Recognition 01
     </h1>
   
 
@@ -86,41 +91,90 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>模式识别系列</p>
+<a id="more"></a>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>模式：我们从事物获得的信息，往往表现为具有时间或空间分布的信息。</p>
+<p>模式识别系统(统计模式识别)：</p>
+<ul>
+<li>信息获取</li>
+<li>预处理</li>
+<li>特征提取和选择</li>
+<li>分类决策</li>
+</ul>
+<p>紧致集：同一类的哥哥模式在改空间组成一个紧致集，从这个紧致集中的任何一点可以均匀过渡到同一集中的另外一点，而在过度途中的所有个点仍然属于这个紧致集即属于同一个模式类。此外当紧致集中各点在任意方向有些不大的移动(相应于被观察对象有些微笑的变形)是它仍然属于这个集合。那么这样的集合被称为紧致集。</p>
+<p>定理：只要各个模式类是可分的，总存在这样一个空间(特征空间)，使变换到这个空间的集合是满足紧致性要求的。</p>
+<p>集合论表述：</p>
+<blockquote>
+<p>   对于一个集合M，定义关系R<br>    \( \forall x \in M, xRx \), 则称关系R是自反的。<br>    \( \forall x,y \in M, xRy \Longrightarrow yRx \), 则称关系R是对称的。<br>    \( \forall x,y,z \in M, xRy,yRz \Longrightarrow xRz \), 则称关系R是传递的。</p>
+</blockquote>
+<p>同时满足自反和对称的关系成为相似关系<br>同时满足自反，对称和传递的关系成为等价关系<br>eg: 相等就是一种等价关系。</p>
+<p>相似性度量——定义在空间中的某种距离：<br>&emsp;&emsp;给定一个输入样本集合\(X\), 用D维空间中的一个点表示某个样本，\(x_i,x_j\)支箭的相似性度量\(\delta(x_i,x_j)\)应满足一下要求：</p>
+<ol>
+<li>相似性度量应为非负值，即\(\delta(x_i,x_j) \geq 0\);</li>
+<li>样本本身之间相似性度量应为最大;</li>
+<li>相似性度量应满足对称性，即\(\delta(x_i,x_j) = \delta(x_j,x_i)\);</li>
+<li>在模式类满足紧致性条件下，相似性应是点间距离的单调函数。</li>
+</ol>
+<p>分类是主观的，不存在纯客观的分类标准。</p>
+<p>特征是决定相似性与分类的关键。</p>
+<blockquote>
+<p>考虑目测一把椅子的重量，想要从视网膜上椅子的图像直接计算其重量是极为困难的，但是我们可以把这个问题分解为若干层次的更简单的问题。例如，重量可以由比重和体积算出，比重可由器材质决定，材质可以从纹理、颜色等可知；体积可有形状算出，三维形状可有二位形状推测，二位形状可由边缘算出，边缘又可以从更为低层的特征——局部方向得到。</p>
+</blockquote>
+<p>&emsp;&emsp;由此可知，为了通过学习获得新的特征，我们需要充分的低层次特征。如果低层次特征足够风度，通过选择和简单的运算就可以得到更高一层的新特征，新特征又可以称为更高层次特征的基础。</p>
+<p>特征分为三个层次</p>
+<ol>
+<li>底层特征：直接地收到信息源物理特性的影响</li>
+<li>中层特征：信息源的变化中存在的某种不变性，建立稳定，可预测的客观世界图景，为高层特征做准备(常识背景)</li>
+<li>高层特征：具体化和专门化，服务于具体的目的与行为</li>
+</ol>
+<h1 id="贝叶斯决策理论"><a href="#贝叶斯决策理论" class="headerlink" title="贝叶斯决策理论"></a>贝叶斯决策理论</h1><p>贝叶斯决策的基本要求</p>
+<ul>
+<li>各类别总体的概率分布是已知的</li>
+<li>要决策分类的类别数是一定的</li>
+</ul>
+<p>要识别的对象有\(d\)种特征观察量\(x_1,x_2,\cdots,x_d\), 构成\(d\)维特征空间。有\(c\)个类别，各类别的状态用\(\omega_i\)来表示。分类的目的是根据特征向量得到样本\(\boldsymbol{x}\)到底属于哪一类。各个类别\(\omega_i\)出现的先验概率\(P(\omega_i)\)及类条件概率密度函数\(p(\boldsymbol{x}|\omega_i)\)是已知的（\(p(\boldsymbol{x}|\omega_i)\)表示在类别\(\omega_i)\)下观察到\(\boldsymbol{x}\)的类条件概率密度）。</p>
+<h2 id="几种常用的决策规则"><a href="#几种常用的决策规则" class="headerlink" title="几种常用的决策规则"></a>几种常用的决策规则</h2><h3 id="基于最小错误率的贝叶斯决策"><a href="#基于最小错误率的贝叶斯决策" class="headerlink" title="基于最小错误率的贝叶斯决策"></a>基于最小错误率的贝叶斯决策</h3><p>用后验概率代替先验概率(可迭代)，最后概率最大的就是决策结果<br>贝叶斯公式</p>
+<span>$$\begin{align}
+P(\omega_i|\boldsymbol{x})=\frac{p(\boldsymbol{x}|\omega_i)P(\omega_i)}{\sum\limits_{i=1}^{c}p(\boldsymbol{x}|\omega_j)P(\omega_j)}
+\end{align}$$</span><!-- Has MathJax -->
+<p>得到的条件概率\(P(\omega_i|\boldsymbol{x})\)成为状态的后验概率。贝叶斯公式实质上是通过观察特征向量\(\boldsymbol{x}\)把状态的先验概率\(P(\omega_i)\)转化为后验概率\(P(\omega_i|\boldsymbol{x})\)<br>基于最小错误率的贝叶斯决策规则为：</p>
+<span>$$\begin{align}
+&amp;P(\omega_i|\boldsymbol{x}) &lt; \max P(\boldsymbol{\omega}|\boldsymbol{x}) &amp; \Longrightarrow \boldsymbol{x}\in\omega_i \\
+&amp;p(\boldsymbol{x}|\omega_i)P(\omega_i) = \max p(\boldsymbol{x}|\boldsymbol{\omega})P(\omega) &amp; \Longrightarrow \boldsymbol{x}\in\omega_i \\
+&amp;\begin{split}
+P(e)=1-P(c)&amp;=1-\sum\limits_{i=1}^cP(\boldsymbol{x}\in\boldsymbol{F}_i|\omega_i)P(\omega_i) \\
+&amp;=1-\sum\limits_{i=1}^c\int\limits_{\boldsymbol{F}_i}p(\boldsymbol{x}|\omega_i)P(\omega_i)dx
+\end{split}
+\end{align}$$</span><!-- Has MathJax -->
+<hr>
+<h2 id="等待下次更新…"><a href="#等待下次更新…" class="headerlink" title="等待下次更新…"></a>等待下次更新…</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hello-world/" data-id="cjizy7vv8000h5guqxocjerve" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/20/Pattern-Recognition-01/" data-id="cjizy7vuw00085guqjwe753xm" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pattern-Recognition/">Pattern Recognition</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/06/29/小飞机被查水表的故事/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/23/核反应堆控制/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          小飞机被查水表的故事
+          核反应堆控制
         
       </div>
     </a>
   
   
-    <a href="/2018/06/25/核反应堆物理/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/09/OS-bios/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">核反应堆物理</div>
+      <div class="article-nav-title">OS bios</div>
     </a>
   
 </nav>

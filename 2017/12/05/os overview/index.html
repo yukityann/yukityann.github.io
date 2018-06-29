@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+
+  
+  <title>OS overview | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OS overview&amp;emsp;&amp;emsp;今天开始学操作系统！虽然我不会汇编也不会计算机组成原理，「放弃吧，要有先修知识的」虽然冥利这么告诉我了，但是好奇嘛……忍不住想早一点了解。于是，决定在看视屏学习的时候即时记录笔记，就是这个系列啦！希望能够学好操作系统呢！">
+<meta name="keywords" content="Note,OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OS overview">
+<meta property="og:url" content="http://yoursite.com/2017/12/05/os overview/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="OS overview&amp;emsp;&amp;emsp;今天开始学操作系统！虽然我不会汇编也不会计算机组成原理，「放弃吧，要有先修知识的」虽然冥利这么告诉我了，但是好奇嘛……忍不住想早一点了解。于是，决定在看视屏学习的时候即时记录笔记，就是这个系列啦！希望能够学好操作系统呢！">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2017/12/05/os%20overview/images/Computer_system0.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/05/os%20overview/images/Computer_system1.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/05/os%20overview/images/Computer_system2.png">
+<meta property="og:updated_time" content="2017-12-07T05:54:58.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OS overview">
+<meta name="twitter:description" content="OS overview&amp;emsp;&amp;emsp;今天开始学操作系统！虽然我不会汇编也不会计算机组成原理，「放弃吧，要有先修知识的」虽然冥利这么告诉我了，但是好奇嘛……忍不住想早一点了解。于是，决定在看视屏学习的时候即时记录笔记，就是这个系列啦！希望能够学好操作系统呢！">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/05/os%20overview/images/Computer_system0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-os overview" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/05/os overview/" class="article-date">
+  <time datetime="2017-12-05T10:49:13.000Z" itemprop="datePublished">2017-12-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OS overview
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OS-overview"><a href="#OS-overview" class="headerlink" title="OS overview"></a>OS overview</h1><p>&emsp;&emsp;今天开始学操作系统！虽然我不会汇编也不会计算机组成原理，「放弃吧，要有先修知识的」虽然冥利这么告诉我了，但是好奇嘛……忍不住想早一点了解。于是，决定在看视屏学习的时候即时记录笔记，就是这个系列啦！希望能够学好操作系统呢！</p>
+<a id="more"></a>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p>《操作系统概念(第七版)》—— Silberschatz, Galvin, Gange著，郑扣根译。高等教育出版社，2010年。<br>《操作系统——精髓与设计原理(第七版)》——William Stallings著，陈向群、陈渝译。电子工业出版社，2012年。</p>
+</blockquote>
+<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><ol>
+<li>Computer composition principle</li>
+<li>C language and Assembly design</li>
+<li>Data structure</li>
+</ol>
+<h2 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h2><ol>
+<li>操作系统结构<ul>
+<li>结构特点</li>
+</ul>
+</li>
+<li>中断及系统调用<ul>
+<li>中断：操作系统与硬件的接口</li>
+<li>系统调用：操作系统对上层应用提供的服务接口</li>
+</ul>
+</li>
+<li>内存管理<ul>
+<li>管理内存资源</li>
+</ul>
+</li>
+<li>进程及线程<ul>
+<li>管理程序的执行过程，维护正在执行的程序的状态</li>
+</ul>
+</li>
+<li>处理机调度<ul>
+<li>进程对CPU使用权的调度</li>
+</ul>
+</li>
+<li>同步互斥<ul>
+<li>不同进程的通信</li>
+</ul>
+</li>
+<li>文件系统<ul>
+<li>文件的读写查找</li>
+</ul>
+</li>
+<li>I/O子系统<ul>
+<li>管理外部设备</li>
+</ul>
+</li>
+</ol>
+<h2 id="什么是操作系统？"><a href="#什么是操作系统？" class="headerlink" title="什么是操作系统？"></a>什么是操作系统？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ol>
+<li><p>控制程序<br>1.1 一个系统软件<br>1.2 控制程序执行过程，防止错误和计算机的不当使用<br>1.3 执行用户程序，给用户提供各种服务<br>1.4 方便用户使用计算机系统</p>
+</li>
+<li><p>资源管理器<br>2.1 应用程序与硬件之间的中简层<br>2.2 管理各种计算机软硬件资源<br>2.3 提供访问计算机软硬件资源的高效手段<br>2.4 解决资源访问冲突，确保资源公平使用</p>
+</li>
+</ol>
+<h3 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h3><p><img src="./images/Computer_system0.png" alt="&quot;Computer system&quot;"><br><img src="./images/Computer_system1.png" alt="&quot;Computer system&quot;"><br><img src="./images/Computer_system2.png" alt="&quot;Computer system&quot;"></p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ul>
+<li>Shell——命令行接口<ul>
+<li>通过键盘操纵</li>
+<li>方便用户进行命令输入</li>
+</ul>
+</li>
+<li>GUI——图形用户接口<ul>
+<li>WIMP(Window, Icon, Menu, Pointer)</li>
+<li>直接操作和所见即所得</li>
+</ul>
+</li>
+<li>Kernel——内核<ul>
+<li>执行克重资源管理等功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ul>
+<li>并发<ul>
+<li>计算机中同时存在多个运行的程序，需要OS管理和调度</li>
+</ul>
+</li>
+<li>共享<ul>
+<li>宏观：同时</li>
+<li>微观：互斥</li>
+</ul>
+</li>
+<li>虚拟<ul>
+<li>利用多道程序设计，让每个用户都觉得有一个计算机专门为他服务</li>
+</ul>
+</li>
+<li>异步<ul>
+<li>程序的执行不是一贯到底，而是走走停停，向前推进的速度不可预知</li>
+<li>只要运行环境相同，OS需要保证程序运行的结果也要相同</li>
+</ul>
+</li>
+<li>其他特征<ul>
+<li>微内核结构</li>
+<li>宏(单)内核结构</li>
+<li>多线</li>
+<li>堆成多处理机分布式操作系统</li>
+<li>面向对象设计</li>
+</ul>
+</li>
+</ul>
+<h3 id="功能部件"><a href="#功能部件" class="headerlink" title="功能部件"></a>功能部件</h3><ul>
+<li>进程管理 Process Management</li>
+<li>主存管理 Main Memory Management</li>
+<li>文件管理 File Management</li>
+<li>I/O系统管理 I/O System Management </li>
+<li>二级储存器管理 Secondary Management</li>
+<li>网络处理 Networking</li>
+<li>保护系统 Protection System</li>
+<li>命令解释系统 Command Interpreter System</li>
+</ul>
+<h3 id="History"><a href="#History" class="headerlink" title="History"></a>History</h3><ol>
+<li>单用户系统</li>
+<li>批处理系统</li>
+<li>多程序系统</li>
+<li>分时系统——CPU性能提高到极致</li>
+<li>个人计算机</li>
+<li>分布式计算机</li>
+<li>云</li>
+<li>…</li>
+</ol>
+<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>&emsp;&emsp;中断是指CPU对系统中发生的异步事件的响应，异步事件是指无一定时序关系的随机发生的时间。<br>&emsp;&emsp; - 中断断点——发生中断时正在执行的程序的暂停点<br>&emsp;&emsp; - 中断响应——处理器暂停当前程序转而处理中断的过程<br>&emsp;&emsp; - 中断返回——中断处理借宿之后回复原来程序的执行<br>&emsp;&emsp; - 中断字——一个计算机提供的中断源的有序集合，这是一个逻辑结构，早不同的处理器有不相同的实现方式</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<li>硬件中断</li>
+<li>软件中断(异常)</li>
+</ol>
+<ul>
+<li><p>程序中断</p>
+<blockquote>
+<p>定点操作数溢出，地址越界，虚存管理中缺页等</p>
+</blockquote>
+</li>
+<li><p>访管中断(trap陷入)</p>
+<blockquote>
+<p>用户程序在运行中亲求操作系统为其提供服务而执行一条“访管指令”所引起的中断，油层软件中断，系统调用。访管中断是进程所期待的，它是主动发起的中断，其他几种中断不是运行进程所期望的，属于强迫性中断事件。</p>
+</blockquote>
+</li>
+</ul>
+<p>现代操作系统是中断驱动的。</p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>特权指令——不允许用户程序中直接使用的指令<br>&emsp;&emsp; eg: I/O指令、设置时钟、设置控制寄存器</li>
+<li>非特权指令——用户程序中所使用的指令</li>
+</ul>
+<h2 id="运行状态"><a href="#运行状态" class="headerlink" title="运行状态"></a>运行状态</h2><ul>
+<li>用户态(User mode): 执行用户程序时的状态<ul>
+<li>能够访问所有系统资源，可以指习惯特权指令，可以直接操作和管理硬件设备</li>
+<li>操作系统内核程序运行在内核态下</li>
+<li>使用内核栈</li>
+</ul>
+</li>
+<li>内核态(Kernel mode): 执行操作系统程序时(又称管态、核心态、系统态、特权模式)<ul>
+<li>只能访问属于它的存储空间和普通寄存器，只能执行普通指令</li>
+<li>用户程序以及操作系统核外程序运行在用户态下</li>
+<li>使用用户栈</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/05/os overview/" data-id="cjizy7vvd000k5guquzeoy9wd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OS/">OS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/07/Meiri-s-Birth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Meiri&#39;s Birth
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Meiri-Project/">Meiri Project</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pattern-Recognition/">Pattern Recognition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/反应堆控制/">反应堆控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/反应堆热工水力学/">反应堆热工水力学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/核反应堆物理/">核反应堆物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Major/">Major</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meiri/">Meiri</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/">Note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnlineJudge/">OnlineJudge</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pattern-Recognition/">Pattern Recognition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python3/">Python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组原/">组原</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Major/" style="font-size: 16.67px;">Major</a> <a href="/tags/Meiri/" style="font-size: 13.33px;">Meiri</a> <a href="/tags/Note/" style="font-size: 20px;">Note</a> <a href="/tags/OS/" style="font-size: 13.33px;">OS</a> <a href="/tags/OnlineJudge/" style="font-size: 10px;">OnlineJudge</a> <a href="/tags/Pattern-Recognition/" style="font-size: 10px;">Pattern Recognition</a> <a href="/tags/Python3/" style="font-size: 10px;">Python3</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/组原/" style="font-size: 10px;">组原</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/29/小飞机被查水表的故事/">小飞机被查水表的故事</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/25/核反应堆物理/">核反应堆物理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/GalOnline/">GalGame Online</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/反应堆热工水力学/">反应堆热工水力学</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

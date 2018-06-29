@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+
+  
+  <title>OnlineJudge 2.0 Deploy | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OnlineJudge 2.0 document环境搭建系统：CentOS 7环境：Docker">
+<meta name="keywords" content="Linux,OnlineJudge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OnlineJudge 2.0 Deploy">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/OnlineJudge-2-0-Deploy/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="OnlineJudge 2.0 document环境搭建系统：CentOS 7环境：Docker">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-03-09T11:33:42.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OnlineJudge 2.0 Deploy">
+<meta name="twitter:description" content="OnlineJudge 2.0 document环境搭建系统：CentOS 7环境：Docker">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-OnlineJudge-2-0-Deploy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/09/OnlineJudge-2-0-Deploy/" class="article-date">
+  <time datetime="2018-03-09T11:30:00.000Z" itemprop="datePublished">2018-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OnlineJudge 2.0 Deploy
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OnlineJudge-2-0-document"><a href="#OnlineJudge-2-0-document" class="headerlink" title="OnlineJudge 2.0 document"></a>OnlineJudge 2.0 document</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>系统：CentOS 7<br>环境：Docker</p>
+<a id="more"></a>
+<h3 id="安装基础工具"><a href="#安装基础工具" class="headerlink" title="安装基础工具"></a>安装基础工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update -y &amp;&amp; yum upgrade -y</span><br><span class="line">yum install vim curl git -y</span><br></pre></td></tr></table></figure>
+<h3 id="安装-python3-及-pip3"><a href="#安装-python3-及-pip3" class="headerlink" title="安装 python3 及 pip3"></a>安装 <code>python3</code> 及 <code>pip3</code></h3><p><a href="http://aoiyuki.org/CentOS-7-python3-6-3-install.html" target="_blank" rel="noopener">CentOS7 Python3.6.3 install</a></p>
+<h3 id="安装-docker-及-docker-compose"><a href="#安装-docker-及-docker-compose" class="headerlink" title="安装 docker 及 docker-compose"></a>安装 <code>docker</code> 及 <code>docker-compose</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://f2d6cb40.m.daocloud.io\""</span> | sudo tee -a /etc/default/docker</span><br><span class="line">pip3 install docker-compose</span><br></pre></td></tr></table></figure>
+<h2 id="启动OJ"><a href="#启动OJ" class="headerlink" title="启动OJ"></a>启动OJ</h2><h3 id="配置及启动-docker-compose"><a href="#配置及启动-docker-compose" class="headerlink" title="配置及启动 docker-compose"></a>配置及启动 <code>docker-compose</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b 2.0 https://github.com/QingdaoU/OnlineJudgeDeploy.git</span><br><span class="line"><span class="built_in">cd</span> OnlineJudgeDeploy</span><br><span class="line">systemctl start docker</span><br><span class="line">vim ./docker-compose.yml</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<h3 id="OJ状态检测"><a href="#OJ状态检测" class="headerlink" title="OJ状态检测"></a>OJ状态检测</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> OnlineJudgeDeploy</span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<h2 id="OJ使用指南"><a href="#OJ使用指南" class="headerlink" title="OJ使用指南"></a>OJ使用指南</h2><h3 id="学生"><a href="#学生" class="headerlink" title="学生"></a>学生</h3><p>普通的注册，提交，应该没啥问题。</p>
+<h3 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h3><p>管理员通过右上角账号下来菜单的<code>Management</code>进入后台</p>
+<h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><p>管理员拥有更改用户的姓名，密码，邮箱等资料的权限<br>管理员拥有发布公告的权限<br>管理员拥有对OJ做一些简单更改的权限<br>管理员拥有启用/关闭判题机的权限</p>
+<h4 id="题目管理"><a href="#题目管理" class="headerlink" title="题目管理"></a>题目管理</h4><p>管理员拥有题目的增删改查的权限<br>管理员拥有创建比赛的权限</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>题目创建支持markdown语法及MathJax，但有一些细微的区别，请注意使用。</li>
+<li>测试数据必须以<code>zip</code>压缩包的形式上传，压缩包内的文件命名规则为<code>序号.in/序号.out</code>的格式，压缩包内不得存在任何文件夹。</li>
+<li>C/Cpp代码必须返回0</li>
+<li>Java题目的内存必须超过256Mb</li>
+<li>题目必须有一个标签(分类)</li>
+<li>比赛模式<ul>
+<li>ACM模式<br>在该模式下,我们严格按照ACM-ICPC的比赛规则来进行，Contest设置项中的real time rank即为是否封榜，封榜后将不再刷新排名。</li>
+<li>OI 模式<br>在OI模式下，选手的提交将根据得分点来计分，多次提交以最后一次提交为准，排名规则为多个题目的总分数。<br>为了照顾OI模式五花八门的规则， 也由于OI模式下没有封榜一说，我们为OI模式下的real time rank赋予了特殊的意义:<br>当real time rank开启时，选手能在提交后立即看到评判结果，并可以查看Rankings， Submissions等信息(类似ACM，只是按得分点计分了)， 当real time rank关闭时， 比赛参与者在提交后将不能获取结果，直到比赛结束才可以查看。</li>
+</ul>
+</li>
+<li><p>用户导入<br>不带头的<code>csv</code>格式文件，包含三列，<code>username</code>, <code>password</code>, <code>Email</code></p>
+<h3 id="系统升级"><a href="#系统升级" class="headerlink" title="系统升级"></a>系统升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> OnlineJudgeDeploy</span><br><span class="line">git pull</span><br><span class="line">docker-compose pull</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/09/OnlineJudge-2-0-Deploy/" data-id="cjizy7vv000095guq70nofb6l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OnlineJudge/">OnlineJudge</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/10/TCP-IP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TCP/IP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/01/CentOS-7-python3-6-3-install/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CentOS 7 python3.6.3 install</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Meiri-Project/">Meiri Project</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pattern-Recognition/">Pattern Recognition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/反应堆控制/">反应堆控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/反应堆热工水力学/">反应堆热工水力学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/核反应堆物理/">核反应堆物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Major/">Major</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meiri/">Meiri</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/">Note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OnlineJudge/">OnlineJudge</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pattern-Recognition/">Pattern Recognition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python3/">Python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组原/">组原</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Major/" style="font-size: 16.67px;">Major</a> <a href="/tags/Meiri/" style="font-size: 13.33px;">Meiri</a> <a href="/tags/Note/" style="font-size: 20px;">Note</a> <a href="/tags/OS/" style="font-size: 13.33px;">OS</a> <a href="/tags/OnlineJudge/" style="font-size: 10px;">OnlineJudge</a> <a href="/tags/Pattern-Recognition/" style="font-size: 10px;">Pattern Recognition</a> <a href="/tags/Python3/" style="font-size: 10px;">Python3</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/组原/" style="font-size: 10px;">组原</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/29/小飞机被查水表的故事/">小飞机被查水表的故事</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/25/核反应堆物理/">核反应堆物理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/GalOnline/">GalGame Online</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/反应堆热工水力学/">反应堆热工水力学</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

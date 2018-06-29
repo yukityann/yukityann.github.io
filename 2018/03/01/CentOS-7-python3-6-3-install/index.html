@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives | Hexo</title>
+  <title>CentOS 7 python3.6.3 install | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="首先需要一些基本的家具，比如vim, git, g++, zlib, python, python-pip 等，那么让我们一个一个的开始吧！">
+<meta name="keywords" content="Linux,Python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 7 python3.6.3 install">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/CentOS-7-python3-6-3-install/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首先需要一些基本的家具，比如vim, git, g++, zlib, python, python-pip 等，那么让我们一个一个的开始吧！">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-03-09T10:28:41.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="CentOS 7 python3.6.3 install">
+<meta name="twitter:description" content="首先需要一些基本的家具，比如vim, git, g++, zlib, python, python-pip 等，那么让我们一个一个的开始吧！">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,216 +65,72 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/29/小飞机被查水表的故事/" class="archive-article-date">
-  <time datetime="2018-06-29T09:10:11.000Z" itemprop="datePublished">Jun 29</time>
+        <section id="main"><article id="post-CentOS-7-python3-6-3-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/CentOS-7-python3-6-3-install/" class="article-date">
+  <time datetime="2018-02-28T16:53:55.000Z" itemprop="datePublished">2018-03-01</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/29/小飞机被查水表的故事/">小飞机被查水表的故事</a>
+    <h1 class="article-title" itemprop="name">
+      CentOS 7 python3.6.3 install
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/29/hello-world/" class="archive-article-date">
-  <time datetime="2018-06-29T08:38:41.550Z" itemprop="datePublished">Jun 29</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/29/hello-world/">Hello World</a>
-    </h1>
-  
+        <p>首先需要一些基本的家具，比如<code>vim</code>, <code>git</code>, <code>g++</code>, <code>zlib</code>, <code>python</code>, <code>python-pip</code> 等，那么让我们一个一个的开始吧！</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install vim -y</span><br><span class="line">yum install git -y</span><br><span class="line">yum install gcc-c++ -y</span><br><span class="line">yum install zlib-devel -y</span><br><span class="line">yum install openssl-devel -y</span><br><span class="line">echo "/usr/include/openssl/" &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+<p>这几个工具安装完成后，开始安装 <code>python</code> 和 <code>python-pip</code> 。我更喜欢 <code>python3</code>，所以在这里我选择编译安装 <code>python3</code>：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir Python3</span><br><span class="line">cd Python3</span><br><span class="line">wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz</span><br><span class="line">tar -xzvf Python-3.6.3.tgz</span><br><span class="line">cd Python-3.6.3</span><br><span class="line">./configure --prefix=/usr/local/python3 --enable-optimizations</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">ln -s /usr/local/python3/bin/python3 /usr/bin/python3</span><br></pre></td></tr></table></figure></p>
+<p>至此，我们还需要修改一个文件来配置环境变量<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>会打开名为 <code>.bash_profile</code> 的文件，修改内容如下：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># .bash_profile</span><br><span class="line"></span><br><span class="line"># Get the aliases and functions</span><br><span class="line">if [ -f ~/.bashrc ]; then</span><br><span class="line">        . ~/.bashrc</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># User specific environment and startup programs</span><br><span class="line"></span><br><span class="line">PATH=$PATH:$HOME/bin:/usr/local/python3/bin</span><br><span class="line">PATH=$PATH:$HOME/bin</span><br><span class="line"></span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>最后启用这个修改就完成了！<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/25/核反应堆物理/" class="archive-article-date">
-  <time datetime="2018-06-25T10:00:00.000Z" itemprop="datePublished">Jun 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/核反应堆物理/">核反应堆物理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/24/GalOnline/" class="archive-article-date">
-  <time datetime="2018-06-24T10:40:15.708Z" itemprop="datePublished">Jun 24</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/01/CentOS-7-python3-6-3-install/" data-id="cjizy7vud00005guq8w51e1f8" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/24/GalOnline/">GalGame Online</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/24/反应堆热工水力学/" class="archive-article-date">
-  <time datetime="2018-06-24T08:00:00.000Z" itemprop="datePublished">Jun 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/24/反应堆热工水力学/">反应堆热工水力学</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python3/">Python3</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/09/OnlineJudge-2-0-Deploy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          OnlineJudge 2.0 Deploy
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/23/核反应堆控制/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">核反应堆控制</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/06/11/Solitaire/" class="archive-article-date">
-  <time datetime="2018-06-11T05:48:29.000Z" itemprop="datePublished">Jun 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/11/Solitaire/">Solitaire</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/03/Computer-Organization/" class="archive-article-date">
-  <time datetime="2018-05-03T08:57:40.000Z" itemprop="datePublished">May 3</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/03/Computer-Organization/">Computer Organization</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/04/10/TCP-IP/" class="archive-article-date">
-  <time datetime="2018-04-09T17:09:00.000Z" itemprop="datePublished">Apr 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/10/TCP-IP/">TCP/IP</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/09/OnlineJudge-2-0-Deploy/" class="archive-article-date">
-  <time datetime="2018-03-09T11:30:00.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/OnlineJudge-2-0-Deploy/">OnlineJudge 2.0 Deploy</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/01/CentOS-7-python3-6-3-install/" class="archive-article-date">
-  <time datetime="2018-02-28T16:53:55.000Z" itemprop="datePublished">Mar 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/CentOS-7-python3-6-3-install/">CentOS 7 python3.6.3 install</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         
