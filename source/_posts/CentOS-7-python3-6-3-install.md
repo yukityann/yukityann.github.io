@@ -9,6 +9,7 @@ tags:
 首先需要一些基本的家具，比如`vim`, `git`, `g++`, `zlib`, `python`, `python-pip` 等，那么让我们一个一个的开始吧！
 
 <!-- more -->
+
 ```shell
 yum install vim -y
 yum install git -y
